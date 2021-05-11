@@ -9,14 +9,15 @@ with open('products_export.csv', 'r') as csv_file:
     # Skips row 1 (the column titles)
     next(csv_reader)
 
-    # Open the Placard Template
-    doc = docx.Document('placard.docx')
-    # Read the heading data
-    skuHEADING = doc.paragraphs[0]
-    titleHEADING = doc.paragraphs[1]
-
     # Read the CSV row by row
     for line in csv_reader:
+
+        # Open the Placard Template
+        doc = docx.Document('placard.docx')
+        # Read the heading data
+        skuHEADING = doc.paragraphs[0]
+        titleHEADING = doc.paragraphs[1]
+
         # Read the CSV column by column
         title = line[0]
         sku = line[1]
