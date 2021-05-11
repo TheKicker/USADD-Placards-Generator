@@ -1,4 +1,5 @@
-import docx, os, csv, urllib.request
+import docx, os, csv, urllib.request, qrcode
+from docx.shared import Inches
 
 folder = os.getcwd()
 
@@ -39,13 +40,22 @@ with open('products_export.csv', 'r') as csv_file:
         with open(sku + suffix, "wb") as f:
             f.write(r.read())
 
+        # Change directory to QR Code folder
+        os.chdir(folder + "/images/qr-codes") 
+
+        # Generate the QR Code
+        img = qrcode.make(sku)
+        img.save(sku + "-qrcode.png")
+
         # Change directory to original location
         os.chdir(folder)
 
         # Replace the heading with SKU, subheading with title, add images
         skuHEADING.text = sku
         titleHEADING.text = title
-        doc.add_picture("images/" + sku + suffix)
+        doc.add_picture("images/" + sku + suffix, width=Inches(3.5), height=Inches(3.5))
+        doc.add_picture("images/qr-codes/" + sku + "-qrcode.png", width=Inches(2.5))
+        doc.add_picture("usadd-logo.png", width=Inches(2.5))
 
         # Save the document to the output folder
         doc.save(folder + "/output/" + sku + ".docx")
