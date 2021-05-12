@@ -21,6 +21,7 @@ Special thanks to <a href="https://www.youtube.com/channel/UC_Z_onPNC4wDBTGWp0SD
     <figcaption>New placards made by this script</figcaption>
 </figure>
 </div>
+<br>
 
 Uses Py Docx to generate the document, urllib for requesting the image via Shopify CDN url, csv to read the products export from Shopify, and OS for minor changing of working directories. Creates the QR Code via QR Code package. Uses Pillow to concatenate three images into one new image.  
 
