@@ -4,9 +4,25 @@ As part of my responsibilities at <a href="https://www.fiestatableware.com">The 
 
 Our store uses the Shopify platform which allows exporting all or selected collections of the products in the system in CSV format. 
 
-CSV's are exported and I clean them manually.  First column is Product Title, second column is Product SKU, third column is Product Variant Image URL.  
+CSV's are exported and I clean them manually.  First column is Product Title, second column is Product SKU, third column is Product Variant Image URL. 
 
-Uses Py Docx to generate the document, urllib for requesting the image via url, csv to read the export from Shopify, and OS for minor changing of working directories. 
+Special thanks to <a href="https://www.youtube.com/channel/UC_Z_onPNC4wDBTGWp0SDBUw" target="_blank">Tiger Online</a> for the great styling tutorial.
+<br><br>
+<hr>
+
+## Before & After
+<div style="display: flex; flex-direction: row; justify-content: space-around">
+<figure>
+    <img src="Original-Placard.png" height="250">
+    <figcaption>Original placards made 1-by-1</figcaption>
+</figure>
+<figure>
+    <img src="Script-Placard.png" height="250">
+    <figcaption>New placards made by this script</figcaption>
+</figure>
+</div>
+
+Uses Py Docx to generate the document, urllib for requesting the image via Shopify CDN url, csv to read the products export from Shopify, and OS for minor changing of working directories. Creates the QR Code via QR Code package. 
 
     The heading is the SKU
 
@@ -14,6 +30,7 @@ Uses Py Docx to generate the document, urllib for requesting the image via url, 
 
     Images of the product, QR Code, and USADD logo 
 
+<br><br>
 <hr>
 
 ## Updates

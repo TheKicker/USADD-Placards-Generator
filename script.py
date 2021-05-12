@@ -3,9 +3,25 @@ from docx.shared import Inches, Pt, RGBColor
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.section import WD_ORIENT
+from PIL import Image 
 
 # Fetch the current working directory of the script
 folder = os.getcwd()
+
+# Function to concatenate the images
+# https://note.nkmk.me/en/python-pillow-concat-images/#concatenate-multiple-images-at-once
+def get_concat_h_multi_resize(im_list, resample=Image.BICUBIC):
+            min_height = min(im.height for im in im_list)
+            im_list_resize = [im.resize((int(im.width * min_height / im.height), min_height),resample=resample)
+                            for im in im_list]
+            total_width = sum(im.width for im in im_list_resize)
+            dst = Image.new('RGB', (total_width, min_height))
+            pos_x = 0
+            for im in im_list_resize:
+                dst.paste(im, (pos_x, 0))
+                pos_x += im.width
+            return dst
+
 
 # Open the CSV file and read it
 with open('products_export.csv', 'r') as csv_file:
@@ -66,7 +82,7 @@ with open('products_export.csv', 'r') as csv_file:
         sku_head.alignment = WD_ALIGN_PARAGRAPH.CENTER
         font = sku_head.style.font
         font.name = 'Times New Roman'
-        font.size = Pt(65)
+        font.size = Pt(85)
         font.bold = True
         font.italic = False
 
@@ -76,14 +92,22 @@ with open('products_export.csv', 'r') as csv_file:
         title_head.alignment = WD_ALIGN_PARAGRAPH.CENTER
         font = title_head.style.font
         font.name = 'Calibri'
-        font.size = Pt(28)
+        font.size = Pt(34)
         font.color.rgb = RGBColor(0,0,0)
         font.bold = False
+        title_head = title_head.paragraph_format
+        title_head.space_after = Pt(40)
 
-        # Add three images
-        doc.add_picture("images/" + sku + suffix, width=Inches(3.5), height=Inches(3.5))
-        doc.add_picture("images/qr-codes/" + sku + "-qrcode.png", width=Inches(2.5))
-        doc.add_picture("usadd-logo.png", width=Inches(2.5))
+        # Populate image variables
+        im1 = Image.open(folder + "/images/" + sku + suffix)
+        im2 = Image.open(folder + "/images/qr-codes/" + sku + "-qrcode.png")
+        im3 = Image.open("usadd-logo.png")
+
+        # Concatenate the images and save to a folder
+        get_concat_h_multi_resize([im1, im2, im3]).save(folder + "/images/concat/" + sku + '-resize.jpg')
+        
+        # Add the picture to the document
+        doc.add_picture(folder + "/images/concat/" + sku + "-resize.jpg", width=Inches(9))
 
         # Save the document to the output folder
         doc.save(folder + "/output/" + sku + ".docx")
