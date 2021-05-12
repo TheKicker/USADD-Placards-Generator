@@ -48,11 +48,18 @@ with open('products_export.csv', 'r') as csv_file:
         sku = line[1]
         url = line[2]
 
-        # Fetch the image from the URL
-        r = urllib.request.urlopen(url)
+        # Shopify sometimes adds a ' before SKUs, this ignores if exists
+        if "'" in sku:
+            sku = sku[1:]
+        else:
+            print("' Detected, skipping first char in {sku1}".format(sku1 = sku))
+            pass
 
         # Change directory to images folder
         os.chdir(folder + "/images")
+
+        # Fetch the image from the URL
+        r = urllib.request.urlopen(url)
 
         # Check the ending on the image
         if ".png?" in url:
