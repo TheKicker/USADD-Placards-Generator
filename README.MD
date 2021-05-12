@@ -40,4 +40,4 @@ Uses QR Code lib to generate SKU QR Codes
 
     pip install qrcode
 
-Uses Pillow to combine product image, QR Code, and USADD Logo into one new image
+Uses Pillow to combine product image, QR Code, and USADD Logo into one new image - <a href="https://note.nkmk.me/en/python-pillow-concat-images/#concatenate-multiple-images-at-once">Specific Tutorial Link</a>
