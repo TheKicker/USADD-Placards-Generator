@@ -6,7 +6,7 @@ Our store uses the Shopify platform which allows exporting all or selected colle
 
 CSV's are exported and I clean them manually.  First column is Product Title, second column is Product SKU, third column is Product Variant Image URL. 
 
-Special thanks to <a href="https://www.youtube.com/channel/UC_Z_onPNC4wDBTGWp0SDBUw" target="_blank">Tiger Online</a> for the great styling tutorial.
+Special thanks to <a href="https://www.youtube.com/watch?v=T9J8ZDRmehk" target="_blank">Tiger Online</a> for the great styling tutorial.
 <br><br>
 <hr>
 
