@@ -22,7 +22,7 @@ Special thanks to <a href="https://www.youtube.com/channel/UC_Z_onPNC4wDBTGWp0SD
 </figure>
 </div>
 
-Uses Py Docx to generate the document, urllib for requesting the image via Shopify CDN url, csv to read the products export from Shopify, and OS for minor changing of working directories. Creates the QR Code via QR Code package. 
+Uses Py Docx to generate the document, urllib for requesting the image via Shopify CDN url, csv to read the products export from Shopify, and OS for minor changing of working directories. Creates the QR Code via QR Code package. Uses Pillow to concatenate three images into one new image.  
 
     The heading is the SKU
 
@@ -38,3 +38,5 @@ Uses Py Docx to generate the document, urllib for requesting the image via Shopi
 Uses QR Code lib to generate SKU QR Codes
 
     pip install qrcode
+
+Uses Pillow to combine product image, QR Code, and USADD Logo into one new image
