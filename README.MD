@@ -13,11 +13,11 @@ Special thanks to <a href="https://www.youtube.com/watch?v=T9J8ZDRmehk" target="
 ## Before & After
 <div style="display: flex; flex-direction: row; justify-content: space-around">
 <figure>
-    <img src="Original-Placard.png" height="250">
+    <img src="assets/Original-Placard.png" height="250">
     <figcaption>Original placards made 1-by-1</figcaption>
 </figure>
 <figure>
-    <img src="Script-Placard.png" height="250">
+    <img src="assets/Script-Placard.png" height="250">
     <figcaption>New placards made by this script</figcaption>
 </figure>
 </div>

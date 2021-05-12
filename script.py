@@ -101,7 +101,7 @@ with open('products_export.csv', 'r') as csv_file:
         # Populate image variables
         im1 = Image.open(folder + "/images/" + sku + suffix)
         im2 = Image.open(folder + "/images/qr-codes/" + sku + "-qrcode.png")
-        im3 = Image.open("usadd-logo.png")
+        im3 = Image.open("assets/usadd-logo.png")
 
         # Concatenate the images and save to a folder
         get_concat_h_multi_resize([im1, im2, im3]).save(folder + "/images/concat/" + sku + '-resize.jpg')
