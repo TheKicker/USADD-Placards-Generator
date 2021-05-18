@@ -26,13 +26,13 @@ def get_concat_h_multi_resize(im_list, resample=Image.BICUBIC):
 # Open the CSV file and read it
 with open('products_export.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
-    
+    i = 0
     # Skips row 1 (the column titles)
-    next(csv_reader)
+    # next(csv_reader)
 
     # Read the CSV row by row
     for line in csv_reader:
-
+        i = i + 1
         # Create a new document
         doc = docx.Document()
         section = doc.sections[-1]
@@ -51,8 +51,9 @@ with open('products_export.csv', 'r') as csv_file:
         # Shopify sometimes adds a ' before SKUs, this ignores if exists
         if "'" in sku:
             sku = sku[1:]
+            print("' Detected, skipping first char in {sku1}.  Document {page} complete. ".format(sku1 = sku, page = i))
         else:
-            print("' Detected, skipping first char in {sku1}".format(sku1 = sku))
+            print("{sku1} ready, document {page} complete. ".format(sku1 = sku, page = i))
             pass
 
         # Change directory to images folder
@@ -118,3 +119,6 @@ with open('products_export.csv', 'r') as csv_file:
 
         # Save the document to the output folder
         doc.save(folder + "/output/" + sku + ".docx")
+
+    
+    print(" Job finished with {pages} complete. ".format(pages=i))
