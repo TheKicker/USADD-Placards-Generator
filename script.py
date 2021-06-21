@@ -28,7 +28,7 @@ with open('products_export.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
     i = 0
     # Skips row 1 (the column titles)
-    # next(csv_reader)
+    next(csv_reader)
 
     # Read the CSV row by row
     for line in csv_reader:
