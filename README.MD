@@ -17,8 +17,12 @@ Special thanks to <a href="https://www.youtube.com/watch?v=T9J8ZDRmehk" target="
     <figcaption>Original placards made by hand 1-by-1</figcaption>
 </figure>
 <figure>
-    <img src="assets/Script-Placard.png" height="300">
-    <figcaption>New placards made by this script</figcaption>
+    <img src="assets/DOCX-Script.png" height="300">
+    <figcaption>New placards made by the DocX script</figcaption>
+</figure>
+<figure>
+    <img src="assets/PDF-Script.png" height="300">
+    <figcaption>New placards made by the DocX script</figcaption>
 </figure>
 </div>
 <br>
@@ -46,7 +50,7 @@ Uses Pillow to combine product image, QR Code, and USADD Logo into one new image
 <br> 
 <hr>
 <br> 
-Uses PyPDF2 & Report Lab for Creating PDFs
+Feb 2022 - Uses PyPDF2 & Report Lab for Creating PDFs
 
     pip install PyPDF2
     pip install reportlab

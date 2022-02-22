@@ -53,8 +53,8 @@ with open('products_export.csv', 'r') as csv_file:
         canvas = Canvas(fn, pagesize=(pageWidth, pageHeight))
         canvas.setFont("Times-Bold", 85)
         canvas.drawCentredString(pageWidth/2, pageHeight-125, sku)
-        canvas.setFont("Times-Roman", 32)
-        canvas.drawCentredString(pageWidth/2, pageHeight-160, title)
+        canvas.setFont("Times-Roman", 26)
+        canvas.drawCentredString(pageWidth/2, pageHeight-170, title)
 
         os.chdir(folder+"/images")
         r = urllib.request.urlopen(url)
