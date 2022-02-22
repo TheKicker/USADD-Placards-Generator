@@ -118,7 +118,7 @@ with open('products_export.csv', 'r') as csv_file:
         doc.add_picture(folder + "/images/concat/" + sku + "-resize.jpg", width=Inches(9))
 
         # Save the document to the output folder
-        doc.save(folder + "/output/" + sku + ".docx")
+        doc.save(folder + "/output/" + sku + ".pdf")
 
     
     print(" Job finished with {pages} complete. ".format(pages=i))

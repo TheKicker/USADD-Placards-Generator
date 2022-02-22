@@ -34,10 +34,22 @@ Uses Py Docx to generate the document, urllib for requesting the image via Shopi
 <br><br>
 <hr>
 
-## Updates
-
+## Updates 
+<hr> 
+<br>
 Uses QR Code lib to generate SKU QR Codes
 
     pip install qrcode
 
 Uses Pillow to combine product image, QR Code, and USADD Logo into one new image - <a href="https://note.nkmk.me/en/python-pillow-concat-images/#concatenate-multiple-images-at-once">Specific Tutorial Link</a>
+
+<br> 
+<hr>
+<br> 
+Uses PyPDF2 & Report Lab for Creating PDFs
+
+    pip install PyPDF2
+    pip install reportlab
+
+
+Report Lab <a href="https://realpython.com/creating-modifying-pdf/#installing-reportlab">- Link</a>
