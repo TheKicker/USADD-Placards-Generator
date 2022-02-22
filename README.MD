@@ -18,11 +18,11 @@ Special thanks to <a href="https://www.youtube.com/watch?v=T9J8ZDRmehk" target="
 </figure>
 <figure>
     <img src="assets/DOCX-Script.png" height="300">
-    <figcaption>New placards made by the DocX script</figcaption>
+    <figcaption>New placards made by the DOCX script</figcaption>
 </figure>
 <figure>
     <img src="assets/PDF-Script.png" height="300">
-    <figcaption>New placards made by the DocX script</figcaption>
+    <figcaption>New placards made by the PDF script</figcaption>
 </figure>
 </div>
 <br>
